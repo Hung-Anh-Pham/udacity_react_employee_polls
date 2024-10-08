@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test QuestionList component Should render correct QuestionList component 1`] = `
+<div
+  className="my-4 p-1 card"
+>
+  <h3
+    className="text-center card-header"
+  />
+  <div
+    className="card-body"
+  >
+    <div
+      className="d-flex flex-wrap"
+    >
+      <div
+        className="m-2 card"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            sarahedo
+          </div>
+          <p
+            className="card-text"
+          >
+            29 Jun 2016, 9:21:12 am
+          </p>
+          <div
+            className="d-grid"
+          >
+            <button
+              className="btn btn-outline-success"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Show
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="m-2 card"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            mtsamis
+          </div>
+          <p
+            className="card-text"
+          >
+            14 Jul 2016, 2:02:47 pm
+          </p>
+          <div
+            className="d-grid"
+          >
+            <button
+              className="btn btn-outline-success"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Show
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="m-2 card"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            sarahedo
+          </div>
+          <p
+            className="card-text"
+          >
+            04 Mar 2017, 5:22:47 am
+          </p>
+          <div
+            className="d-grid"
+          >
+            <button
+              className="btn btn-outline-success"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Show
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="m-2 card"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            tylermcginnis
+          </div>
+          <p
+            className="card-text"
+          >
+            24 Dec 2016, 6:42:47 pm
+          </p>
+          <div
+            className="d-grid"
+          >
+            <button
+              className="btn btn-outline-success"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Show
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="m-2 card"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            tylermcginnis
+          </div>
+          <p
+            className="card-text"
+          >
+            15 Mar 2017, 7:09:27 pm
+          </p>
+          <div
+            className="d-grid"
+          >
+            <button
+              className="btn btn-outline-success"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Show
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="m-2 card"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            mtsamis
+          </div>
+          <p
+            className="card-text"
+          >
+            01 May 2017, 2:16:07 am
+          </p>
+          <div
+            className="d-grid"
+          >
+            <button
+              className="btn btn-outline-success"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Show
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
