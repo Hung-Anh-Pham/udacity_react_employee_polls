@@ -1,8 +1,9 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import { Provider } from "react-redux";
+import { fireEvent, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import configureMockStore from "redux-mock-store";
 import AddQuestionPage from "../components/AddQuestionPage";
+import { renderWithProviders } from "./setup-test";
+
 
 const mockStore = configureMockStore();
 
@@ -16,18 +17,24 @@ describe("Test AddQuestionPage component", () => {
 				password: "pass246",
 				name: "Zenobia Oshikanlu",
 			},
+			users: {
+				zoshikanlu: {
+					id: "zoshikanlu",
+					name: "Zenobia Oshikanlu",
+					avatarURL: "url_to_avatar",
+				},
+			},
+			questions: {},
 		};
 		store = mockStore(initialState);
 	});
 
 	it("Should render correct AddQuestionPage component", () => {
-
-		render(
-			<Provider store={store}>
-				<MemoryRouter>
-					<AddQuestionPage />
-				</MemoryRouter>
-			</Provider>
+		renderWithProviders(
+			<MemoryRouter>
+				<AddQuestionPage />
+			</MemoryRouter>,
+			{ store }
 		);
 
 		const optOneInput = screen.getByPlaceholderText("Option One");
@@ -44,4 +51,5 @@ describe("Test AddQuestionPage component", () => {
 		const errMsg = screen.getByText("Input must not be empty");
 		expect(errMsg).toBeInTheDocument();
 	});
+
 });

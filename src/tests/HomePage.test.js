@@ -1,9 +1,9 @@
-import { render, screen } from "@testing-library/react";
-import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
 import configureMockStore from "redux-mock-store";
 import HomePage from "../components/HomePage";
 import { questions } from "../utils/_DATA";
+import { renderWithProviders } from "./setup-test";
+
 
 const mockStore = configureMockStore();
 
@@ -23,14 +23,14 @@ describe("Test HomePage component", () => {
 	});
 
 	it("Should render correct QuestionCard component", () => {
-		render(
-			<Provider store={store}>
-				<MemoryRouter>
-					<HomePage />
-				</MemoryRouter>
-			</Provider>
-		);
 
-		expect(screen).toMatchSnapshot();
+		const { page } = renderWithProviders(
+			<MemoryRouter>
+				<HomePage />
+			</MemoryRouter>,
+			{ store }
+		)
+
+		expect(page).toMatchSnapshot();
 	});
 });

@@ -7,6 +7,7 @@ describe("Test api call", () => {
 
 		await expect(login(user.id, user.password)).resolves.toBe(user);
 	});
+	
 	it("Should login failed", async () => {
 		await expect(login("invalid", "invalid")).rejects.toBe(
 			"Username or password incorrect!"

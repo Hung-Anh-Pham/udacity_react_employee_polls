@@ -1,31 +1,47 @@
-import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
-import { createStore } from "redux";
 import QuestionCard from "../components/QuestionCard";
-import reducers from "../reducers";
-import { screen, render } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderWithProviders } from "./setup-test";
+import configureMockStore from "redux-mock-store";
+
+const mockStore = configureMockStore();
+
 
 describe("Test QuestionCard component", () => {
-	let testStore;
+	
+	let store;
 
-	beforeAll(() => {
-		testStore = createStore(reducers);
-	});
+	const question = {
+		id: "vthrdm985a262al8qx3do",
+		author: "tylermcginnis",
+		timestamp: 1467166872634,
+	};
+
+    beforeEach(() => {
+        store = mockStore({
+            users: {
+                tylermcginnis: {
+                    id: "tylermcginnis",
+                    name: "Tyler McGinnis",
+                    avatarURL: "url_to_avatar",
+                },
+            },
+            questions: {
+                [question.id]: question,
+            },
+            authedUser: "tylermcginnis",
+        });
+    });
 
 	it("Should render correct QuestionCard component", async () => {
-		const question = {
-			id: "vthrdm985a262al8qx3do",
-			author: "tylermcginnis",
-			timestamp: 1467166872634,
-		};
 
-		render(
-			<Provider store={testStore}>
-				<MemoryRouter>
-					<QuestionCard question={question} isAnswered={true} />
-				</MemoryRouter>
-			</Provider>
+		renderWithProviders(
+			<MemoryRouter>
+				<QuestionCard question={question} isAnswered={true} />
+			</MemoryRouter>,
+			{ store }
 		);
+
 		const showBtn = screen.getByText("Show");
 
 		expect(showBtn).toBeInTheDocument();
